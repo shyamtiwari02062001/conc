@@ -1,0 +1,44 @@
+const Reaction={0:[
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/jamamasjid.png"),
+	require("../assets/monuments/DelhiFort.png"),
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/jamamasjid.png"),
+	require("../assets/monuments/DelhiFort.png"),
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/jamamasjid.png"),
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/DelhiFort.png"),
+	require("../assets/monuments/tajmahal.png"),
+	3
+],
+1:[
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/jamamasjid.png"),
+	require("../assets/monuments/DelhiFort.png"),
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/jamamasjid.png"),
+	require("../assets/monuments/DelhiFort.png"),
+	require("../assets/monuments/jamamasjid.png"),
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/DelhiFort.png"),
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/DelhiFort.png"),
+	5
+],
+2:[
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/DelhiFort.png"),
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/jamamasjid.png"),
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/jamamasjid.png"),
+	require("../assets/monuments/victoria.png"),
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/jamamasjid.png"),
+	require("../assets/monuments/tajmahal.png"),
+	require("../assets/monuments/DelhiFort.png"),
+	5
+]
+};
+export default Reaction;
