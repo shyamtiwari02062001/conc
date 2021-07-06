@@ -59,5 +59,19 @@ const TurnAroundImageName={
 		"sattriya",
 		"ram",
 	],
+	6:[
+		"Kathakali",
+		"sattriya",
+		"rastrapatibhawan",
+		"Kathakali",
+		"bharatnatayam",
+		"karn",
+		"bharatnatayam",
+		"karn",
+		"rastrapatibhawan",
+		"ram",
+		"sattriya",
+		"ram",
+	],
 };
 export default TurnAroundImageName;

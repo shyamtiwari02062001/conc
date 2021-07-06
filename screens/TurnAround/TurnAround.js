@@ -5,7 +5,7 @@ import {
 	TouchableOpacity,
 	Image,
 	ImageBackground,
-	Text
+	Text,
 } from "react-native";
 import Tiles from "../../constants/tiles";
 import Close from "../../components/close";
@@ -13,8 +13,11 @@ import GamePoint from "../../components/gamepoints";
 import GamePointContext from "../../context/GamePoints";
 import PropTypes from "prop-types";
 import TurnAroundImageName from "../../constants/TurnAroundImageName";
+import PopUp from "../../components/PopUp";
 const  TurnAround=(props)=>{
 	const {gamePoint,setGamePoint}=React.useContext(GamePointContext);
+	const [match,setMatched]=useState(false);
+	const [story,setStory]=useState(false);
 	// eslint-disable-next-line prefer-const
 	let [count,setCount]=useState(0);
 	const [id1,setId1]=useState(null);
@@ -42,6 +45,100 @@ const  TurnAround=(props)=>{
 	const [imageId11,setImageId11]=useState(null);
 	const [imageId12,setImageId12]=useState(0);
 	const [success,setSuccess]=useState(false);
+	const print=(matchedImage)=>{
+		if(matchedImage===9){
+			//story of bharatnatyam
+			// eslint-disable-next-line max-len
+			setStory("Bharatnatyam comes from the state of Tamil Nadu in South. The origins of Bharatnatyam can be traced back to 1000 BC.");
+		}
+		else if(matchedImage===10){
+			//story of kathak
+			// eslint-disable-next-line max-len
+			setStory("Kathak is one of the eight major forms of Indian classical dance.");
+		}
+		else if(matchedImage===12){
+			//story of krishna
+			// eslint-disable-next-line max-len
+			setStory("Lord Krishna killed his maternal uncle Kamsa and destroyed sin.");
+		}
+		else if(matchedImage===11){
+			//story of arjuna
+			// eslint-disable-next-line max-len
+			setStory("Arjun was cursed by Urvashi an Apsara of Indralok as he was addressing her 'mother' and said that he would become a eunuch");
+		}
+		else if(matchedImage===13){
+			//story of tajmahal
+			// eslint-disable-next-line max-len
+			setStory("Taj Mahal is famous as 7th Wonder of the World.  It was built by Mughal emperor Shahjahan in the memory of his beloved wife, Mumtaz Mahal.");
+		}
+		else if(matchedImage===14){
+			//story of udaipurpalce
+			setStory("Arvind Singh Mewar is the owner of City Palace");
+		}
+		else if(matchedImage===16){
+			//story of rastrapatibhawan
+			// eslint-disable-next-line max-len
+			setStory("Rashtrapati Bhavan also known as Presidential palace is the second largest in the world after the Quirinal Palace, Rome");
+		}
+		else if(matchedImage===15){
+			//story of GingeeFort
+			// eslint-disable-next-line max-len
+			setStory("Gingee fort was constructed during the time of Chola dynasty. Later, it was revamped by the Kurumbas (who ruled for sometime). The present structure was built by Gingee Nayaks in the 15th and 16th century.");
+		}
+		else if(matchedImage===18){
+			//story of kuchipudi
+			// eslint-disable-next-line max-len
+			setStory("Kuchipudi is a dance-drama performance, with its roots in the ancient Hindu Sanskrit text of Natya Shastra");
+		}
+		else if(matchedImage===17){
+			//story of kathakali
+			// eslint-disable-next-line max-len
+			setStory("Kathakali is another traditional dance form of Indian state of kerala.");
+		}
+		else if(matchedImage===20){
+			//story of eid
+			// eslint-disable-next-line max-len
+			setStory("THE WHITE HOUSE HELD ITS FIRST EID AL-FITR DINNER IN 1996.");
+		}
+		else if(matchedImage===24){
+			//story of ganeshchaturthi
+			// eslint-disable-next-line max-len
+			setStory("It is believed that Ganesh Chaturthi is the day when Lord Ganesh was born.");
+		}
+		else if(matchedImage===21){
+			//story of onam
+			// eslint-disable-next-line max-len
+			setStory("Onam festival is celebrated to honour the kind-hearted and much-beloved demon King Mahabali, who is believed to return to Kerala during this festival. ");
+		}
+		else if(matchedImage===23){
+			//story of durgapuja
+			setStory("Goddess durga is a major deity in Hinduism.");
+		}
+		else if(matchedImage===22){
+			//story of christmas
+			setStory("Santa Claus was known as Sinterklaas in Dutch");
+		}
+		else if(matchedImage===19){
+			//story of janmastmi
+			// eslint-disable-next-line max-len
+			setStory("Krishna Janmashtami, also known simply as Janmashtami or Gokulashtami, is an annual Hindu festival that celebrates the birth of Krishna, the eighth avatar of Vishnu");
+		}
+		else if(matchedImage===27){
+			//story of ram
+			// eslint-disable-next-line max-len
+			setStory("Lord Shri Ram was born in Treta Yuga in present day Ayodhya in Uttar Pradesh.");
+		}
+		else if(matchedImage===25){
+			//story of sattriya
+			// eslint-disable-next-line max-len
+			setStory("The Sattriya dance form was introduced in the 15th century A.D by the great Vaishnava saint and reformer of Assam, Mahapurusha Sankaradeva");
+		}
+		else if(matchedImage===26){
+			//story of karn
+			// eslint-disable-next-line max-len
+			setStory("Karna, also known as Vasusena, Anga-raja, and Radheya, is one of the major characters of the Hindu epic Mahābhārata. ");
+		}
+	};
 	// eslint-disable-next-line prefer-const
 	let [gameId,setGameId]=useState(0);
 	const arrayLength=Tiles[gameId].length;
@@ -57,6 +154,11 @@ const  TurnAround=(props)=>{
 				setImageId2(tile);
 				if(tile==imageId1){
 					console.log("matched1");
+					setMatched(true);
+					print(tile);
+					setTimeout(()=>{
+						setMatched(false);
+					},3000);
 					setCount(0);
 				}
 				else{
@@ -80,12 +182,17 @@ const  TurnAround=(props)=>{
 				setImageId4(tile);
 				if(tile==imageId3){
 					console.log("matched2");
+					setMatched(true);
+					print(tile);
+					setTimeout(()=>{
+						setMatched(false);
+					},3000);
 					setCount(0);
 					if(arrayLength===4){
 						setTimeout(()=>{
 							setGamePoint(gamePoint+10);
 							setSuccess(true);
-						},500);
+						},2800);
 						setTimeout(()=>{
 							setImageId1(null);
 							setImageId2(0);
@@ -99,7 +206,7 @@ const  TurnAround=(props)=>{
 						},2000);
 						setTimeout(()=>{
 							setSuccess(false);
-						},3000);
+						},6000);
 					}
 				}
 				else{
@@ -123,6 +230,11 @@ const  TurnAround=(props)=>{
 				setImageId6(tile);
 				if(tile==imageId5){
 					console.log("matched3");
+					setMatched(true);
+					print(tile);
+					setTimeout(()=>{
+						setMatched(false);
+					},3000);
 					setCount(0);
 				}
 				else{
@@ -149,12 +261,17 @@ const  TurnAround=(props)=>{
 				setImageId8(tile);
 				if(tile==imageId7){
 					console.log("matched4");
+					setMatched(true);
+					print(tile);
+					setTimeout(()=>{
+						setMatched(false);
+					},3000);
 					setCount(0);
 					if(arrayLength===8){
 						setTimeout(()=>{
 							setGamePoint(gamePoint+10);
 							setSuccess(true);
-						},500);
+						},2800);
 						setTimeout(()=>{
 							setImageId1(null);
 							setImageId2(0);
@@ -176,7 +293,7 @@ const  TurnAround=(props)=>{
 						},2000);
 						setTimeout(()=>{
 							setSuccess(false);
-						},3000);
+						},6000);
 					}
 				}
 				else{
@@ -205,6 +322,11 @@ const  TurnAround=(props)=>{
 				setImageId10(tile);
 				if(tile==imageId9){
 					console.log("matched5");
+					setMatched(true);
+					print(tile);
+					setTimeout(()=>{
+						setMatched(false);
+					},3000);
 					setCount(0);
 				}
 				else{
@@ -233,12 +355,17 @@ const  TurnAround=(props)=>{
 				setImageId12(tile);
 				if(tile==imageId11){
 					console.log("matched6");
+					setMatched(true);
+					print(tile);
+					setTimeout(()=>{
+						setMatched(false);
+					},3000);
 					setCount(0);
 					if(arrayLength===12){
 						setTimeout(()=>{
 							setSuccess(true);
 							setGamePoint(gamePoint+10);
-						},500);
+						},2800);
 						setTimeout(()=>{
 							setImageId1(null);
 							setImageId2(0);
@@ -268,7 +395,7 @@ const  TurnAround=(props)=>{
 						},2000);
 						setTimeout(()=>{
 							setSuccess(false);
-						},3000);
+						},6000);
 					}
 				}
 				else{
@@ -293,6 +420,14 @@ const  TurnAround=(props)=>{
 			>
 				<Close fun={()=>{props.navigation.navigate("Dashboard");}}/>
 				<GamePoint/>
+				<PopUp visible={match} fun={()=>{setMatched(false);}}>
+					<Text style={{
+						fontSize:20,
+						fontWeight:"bold",
+						textAlign:"center"
+					}}>Did you know ?</Text>
+					<Text style={{fontSize:18}}>{story}</Text>
+				</PopUp>
 				{(Tiles[gameId].length!==12)&&
 				<View style={[styles.view,{marginLeft:"5%",marginTop:"10%"}]}>
 					{Tiles[gameId].map((tile,index)=>

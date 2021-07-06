@@ -59,5 +59,19 @@ const TurnAround={
 		require("../assets/dances/sattriya.png"),
 		require("../assets/turnAroundImages/ram.png"),
 	],
+	6:[
+		require("../assets/dances/Kathakali.png"),
+		require("../assets/dances/sattriya.png"),
+		require("../assets/monuments/rastrapatibhawan.png"),
+		require("../assets/dances/Kathakali.png"),
+		require("../assets/dances/bharatnatayam.png"),
+		require("../assets/mahabharat/karn.png"),
+		require("../assets/dances/bharatnatayam.png"),
+		require("../assets/mahabharat/karn.png"),
+		require("../assets/monuments/rastrapatibhawan.png"),
+		require("../assets/turnAroundImages/ram.png"),
+		require("../assets/dances/sattriya.png"),
+		require("../assets/turnAroundImages/ram.png"),
+	],
 };
 export default TurnAround;
